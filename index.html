@@ -232,58 +232,24 @@
       width: 100%;
       aspect-ratio: 4 / 5;
       border-radius: calc(var(--radius-xl) - 10px);
-      border: 1px dashed rgba(114, 90, 76, 0.35);
-      background:
-        linear-gradient(135deg, rgba(234, 215, 208, 0.7), rgba(255,255,255,0.86)),
-        repeating-linear-gradient(
-          45deg,
-          rgba(181,127,114,0.08),
-          rgba(181,127,114,0.08) 10px,
-          rgba(151,166,140,0.09) 10px,
-          rgba(151,166,140,0.09) 20px
-        );
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 1.5rem;
-      color: var(--text-soft);
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(234, 215, 208, 0.45), rgba(255,255,255,0.92));
     }
 
-    .placeholder-image strong {
+    .gallery-item .placeholder-image {
+      border-radius: 0;
+      aspect-ratio: 4 / 4.4;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .real-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      font-size: 1rem;
-      color: var(--text);
-      margin-bottom: 0.35rem;
     }
 
-    .floating-note {
-      position: absolute;
-      right: -10px;
-      bottom: 18px;
-      width: min(250px, 72%);
-      background: rgba(255, 250, 245, 0.92);
-      border: 1px solid rgba(114, 90, 76, 0.12);
-      border-radius: 20px;
-      padding: 1rem 1rem 0.95rem;
-      box-shadow: 0 14px 28px rgba(71, 50, 36, 0.12);
-      backdrop-filter: blur(10px);
-    }
-
-    .floating-note span {
-      display: inline-block;
-      margin-bottom: 0.45rem;
-      font-size: 0.8rem;
-      color: var(--accent-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 700;
-    }
-
-    .floating-note p {
-      font-size: 0.95rem;
-      color: var(--text-soft);
-      line-height: 1.45;
-    }
+    
 
     .split-grid {
       display: grid;
@@ -577,13 +543,12 @@
 
         <div class="hero-visual">
           <div class="hero-card">
-            <!-- HERO-BILD ERSETZEN: src="bilder/hero.jpg" -->
             <div class="placeholder-image">
-              
+              <img src="bilder/Logo.jpg" alt="Handgefilzte Figur von Die FilzMarie" class="real-image" />
             </div>
           </div>
-
-          
+        </div>
+      </div>
     </section>
 
     <section class="section" id="ueber">
@@ -623,9 +588,7 @@
               Fragen und Wünsche können direkt über Instagram, Etsy oder per E-Mail gestellt werden.
             </div>
           </div>
-          <p class="small-note">
-            
-          </p>
+          
         </div>
       </div>
     </section>
@@ -635,95 +598,67 @@
         <span class="pill">Galerie</span>
         <h2 class="section-title" style="margin-top: 1rem;">Einblicke in die Filzkunst</h2>
         <p class="section-intro">
+          Entdecke ausgewählte handgefilzte Figuren, liebevoll gestaltete Details und besondere Unikate.
         </p>
 
         <div class="gallery-grid">
           <article class="gallery-item">
-            <!-- GALERIEBILD 1 ERSETZEN: src="bilder/galerie-1.jpg" -->
             <div class="placeholder-image">
-              <div>
-                <strong>Galeriebild 1</strong>
-                <br />
-                <code>bilder/galerie-1.jpg</code>
-              </div>
+              <img src="bilder/galerie-1.png" alt="Handgefilzte Figur in der Galerie" class="real-image" loading="lazy" />
             </div>
             <div class="gallery-info">
-          
+              <h3>Filzfigur 1</h3>
+              <p>Liebevoll handgearbeitet und mit viel Gespür für kleine Details gestaltet.</p>
             </div>
           </article>
 
           <article class="gallery-item">
-            <!-- GALERIEBILD 2 ERSETZEN: src="bilder/galerie-2.jpg" -->
             <div class="placeholder-image">
-              <div>
-                <strong>Galeriebild 2</strong>
-                <br />
-                <code>bilder/galerie-2.jpg</code>
-              </div>
+              <img src="bilder/galerie-2.png" alt="Handgefilzte Figur in der Galerie" class="real-image" loading="lazy" />
             </div>
             <div class="gallery-info">
-              <h3></h3>
-              <p>.</p>
+              <h3>Filzfigur 2</h3>
+              <p>Sanfte Farben, warme Materialien und ein ganz eigener Charakter.</p>
             </div>
           </article>
 
           <article class="gallery-item">
-            <!-- GALERIEBILD 3 ERSETZEN: src="bilder/galerie-3.jpg" -->
             <div class="placeholder-image">
-              <div>
-                <strong>Galeriebild 3</strong>
-               <br />
-                <code>bilder/galerie-3.jpg</code>
-              </div>
+              <img src="bilder/galerie-3.png" alt="Handgefilzte Figur in der Galerie" class="real-image" loading="lazy" />
             </div>
             <div class="gallery-info">
-              <h3></h3>
-              <p></p>
+              <h3>Filzfigur 3</h3>
+              <p>Ein Unikat mit ruhiger Ausstrahlung und sorgfältig ausgearbeiteten Formen.</p>
             </div>
           </article>
 
           <article class="gallery-item">
-            <!-- GALERIEBILD 4 ERSETZEN: src="bilder/galerie-4.jpg" -->
             <div class="placeholder-image">
-              <div>
-                <strong>Galeriebild 4</strong>
-                <br />
-                <code>bilder/galerie-4.jpg</code>
-              </div>
+              <img src="bilder/galerie-4.png" alt="Handgefilzte Figur in der Galerie" class="real-image" loading="lazy" />
             </div>
             <div class="gallery-info">
-              <h3></h3>
-              <p></p>
+              <h3>Filzfigur 4</h3>
+              <p>Handgefilzte Gestaltung, die als Geschenk oder kleines Lieblingsstück begeistert.</p>
             </div>
           </article>
 
           <article class="gallery-item">
-            <!-- GALERIEBILD 5 ERSETZEN: src="bilder/galerie-5.jpg" -->
             <div class="placeholder-image">
-              <div>
-                <strong>Galeriebild 5</strong>
-               <br />
-                <code>bilder/galerie-5.jpg</code>
-              </div>
+              <img src="bilder/galerie-5.png" alt="Handgefilzte Figur in der Galerie" class="real-image" loading="lazy" />
             </div>
             <div class="gallery-info">
-              <h3></h3>
-              <p></p>
+              <h3>Filzfigur 5</h3>
+              <p>Mit viel Geduld gefertigt und in jedem Detail individuell ausgearbeitet.</p>
             </div>
           </article>
 
           <article class="gallery-item">
-            <!-- GALERIEBILD 6 ERSETZEN: src="bilder/galerie-6.jpg" -->
             <div class="placeholder-image">
-              <div>
-                <strong>Galeriebild 6</strong>
-                <br />
-                <code>bilder/galerie-6.jpg</code>
-              </div>
+              <img src="bilder/galerie-6.png" alt="Handgefilzte Figur in der Galerie" class="real-image" loading="lazy" />
             </div>
             <div class="gallery-info">
-              <h3></h3>
-              <p></p>
+              <h3>Filzfigur 6</h3>
+              <p>Ein weiteres handgemachtes Einzelstück aus der Welt von Die FilzMarie.</p>
             </div>
           </article>
         </div>
@@ -735,6 +670,7 @@
         <span class="pill">Mehr entdecken</span>
         <h2 class="section-title" style="margin-top: 1rem;">Instagram & Etsy</h2>
         <p class="section-intro">
+          Entdecke ausgewählte handgefilzte Figuren, liebevoll gestaltete Details und besondere Unikate.
         </p>
 
         <div class="cta-grid">
@@ -767,8 +703,7 @@
         <span class="pill">Kontakt</span>
         <h2 class="section-title" style="margin-top: 1rem;">Fragen oder individuelle Wünsche?</h2>
         <p class="section-intro">
-          Hier kann deine Tante erreichbar sein, ohne dass die Seite gleich aussieht wie das Kontrollzentrum einer Versicherung.
-          Schlicht reicht völlig.
+          Bei Fragen zu Figuren, Farben oder individuellen Wünschen freue ich mich über eine Nachricht.
         </p>
 
         <div class="contact-grid">
@@ -776,8 +711,8 @@
             <h3>Kontaktmöglichkeiten</h3>
             <ul>
               <li><strong>E-Mail:</strong> <a href="mailto:deine-email@example.com">deine-email@example.com</a></li>
-              <li><strong>Instagram:</strong> <a href="https://www.instagram.com/diefilzmarie" target="_blank" rel="noopener noreferrer">@diefilzmarie</a></li>
-              <li><strong>Etsy:</strong> <a href="https://www.etsy.com" target="_blank" rel="noopener noreferrer">Shop-Link einsetzen</a></li>
+              <li><strong>Instagram:</strong> <a href="https://www.instagram.com/diefilzmarie?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">@diefilzmarie</a></li>
+              <li><strong>Etsy:</strong> <a href="https://www.etsy.com/de/shop/DieFilzMarie" target="_blank" rel="noopener noreferrer">Zum Etsy-Shop</a></li>
             </ul>
           </div>
 
@@ -796,7 +731,7 @@
         <span class="pill">Rechtliches</span>
         <h2 class="section-title" style="margin-top: 1rem;">Impressum & Datenschutz</h2>
         <p class="section-intro">
-
+          Entdecke ausgewählte handgefilzte Figuren, liebevoll gestaltete Details und besondere Unikate.
         </p>
 
         <div class="legal-grid">
@@ -807,9 +742,7 @@
               <strong>Anschrift:</strong> Straße Hausnummer, PLZ Ort<br />
               <strong>E-Mail:</strong> deine-email@example.com
             </p>
-            <p style="margin-top: 0.8rem;">
-              
-            </p>
+            
           </div>
 
           <div class="legal-box">
