@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Die FilzMarie | Handgefilzte Unikate</title>
+  <meta name="description" content="Liebevoll handgefilzte Figuren und kleine Unikate von Die FilzMarie. Galerie, Etsy, Instagram und Kontakt auf einen Blick." />
+
+  <style>
+    :root {
+      --bg: #f8f4ee;
+      --bg-soft: #fffaf5;
+      --card: rgba(255, 252, 248, 0.88);
+      --text: #3c312c;
+      --text-soft: #6d5a51;
+      --line: rgba(114, 90, 76, 0.14);
+      --accent: #b57f72;
+      --accent-dark: #8d5f55;
+      --accent-light: #ead7d0;
+      --sage: #97a68c;
+      --shadow: 0 18px 45px rgba(85, 60, 43, 0.11);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(234, 215, 208, 0.55), transparent 32%),
+        radial-gradient(circle at right, rgba(151, 166, 140, 0.18), transparent 28%),
+        linear-gradient(180deg, #fcf7f2 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      color: var(--text-soft);
+      font-size: 1.05rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.95rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.55);
+      color: var(--text-soft);
+      font-size: 0.92rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(252, 247, 242, 0.72);
+      border-bottom: 1px solid rgba(114, 90, 76, 0.08);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.83rem;
+      color: var(--text-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 0.96rem;
+      color: var(--text-soft);
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 50px;
+      padding: 0.9rem 1.35rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: white;
+      box-shadow: 0 14px 30px rgba(141, 95, 85, 0.24);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.7);
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 88px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin: 1rem 0 1.25rem;
+    }
+
+    .hero-copy p {
+      max-width: 620px;
+      font-size: 1.08rem;
+      color: var(--text-soft);
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-notes {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      position: relative;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: var(--radius-xl);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .placeholder-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: calc(var(--radius-xl) - 10px);
+      border: 1px dashed rgba(114, 90, 76, 0.35);
+      background:
+        linear-gradient(135deg, rgba(234, 215, 208, 0.7), rgba(255,255,255,0.86)),
+        repeating-linear-gradient(
+          45deg,
+          rgba(181,127,114,0.08),
+          rgba(181,127,114,0.08) 10px,
+          rgba(151,166,140,0.09) 10px,
+          rgba(151,166,140,0.09) 20px
+        );
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--text-soft);
+    }
+
+    .placeholder-image strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .floating-note {
+      position: absolute;
+      right: -10px;
+      bottom: 18px;
+      width: min(250px, 72%);
+      background: rgba(255, 250, 245, 0.92);
+      border: 1px solid rgba(114, 90, 76, 0.12);
+      border-radius: 20px;
+      padding: 1rem 1rem 0.95rem;
+      box-shadow: 0 14px 28px rgba(71, 50, 36, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .floating-note span {
+      display: inline-block;
+      margin-bottom: 0.45rem;
+      font-size: 0.8rem;
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .floating-note p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      line-height: 1.45;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 1.4rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .about-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-copy p {
+      margin-bottom: 1rem;
+      color: var(--text-soft);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    .feature-item {
+      padding: 0.95rem 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.6);
+      border: 1px solid var(--line);
+    }
+
+    .feature-item strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      grid-column: span 4;
+      background: var(--card);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.5);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item .placeholder-image {
+      border-radius: 0;
+      aspect-ratio: 4 / 4.4;
+      border: none;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .gallery-info {
+      padding: 1rem 1rem 1.1rem;
+    }
+
+    .gallery-info h3 {
+      font-size: 1.08rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .gallery-info p {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .cta-card {
+      padding: 1.5rem;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,248,243,0.82));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .cta-card p {
+      color: var(--text-soft);
+      margin-bottom: 1rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .contact-box {
+      padding: 1.35rem;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.64);
+    }
+
+    .contact-box h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box p,
+    .contact-box li {
+      color: var(--text-soft);
+    }
+
+    .contact-box ul {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+      margin-top: 0.6rem;
+    }
+
+    .legal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .legal-box {
+      padding: 1.35rem;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.54);
+    }
+
+    .legal-box h3 {
+      margin-bottom: 0.7rem;
+    }
+
+    .legal-box p,
+    .legal-box li {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .legal-box ul {
+      padding-left: 1.1rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid rgba(114, 90, 76, 0.08);
+    }
+
+    .footer-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--text-soft);
+      font-size: 0.94rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .small-note {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split-grid,
+      .contact-grid,
+      .legal-grid,
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item {
+        grid-column: span 6;
+      }
+
+      .floating-note {
+        position: static;
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .nav {
+        align-items: flex-start;
+        padding: 1rem 0;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 0.8rem 1rem;
+      }
+
+      .hero {
+        padding: 50px 0 42px;
+      }
+
+      .gallery-item {
+        grid-column: span 12;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#start">
+        <span class="brand-title">Die FilzMarie</span>
+        <span class="brand-subtitle">Handgefilzte Unikate mit Liebe zum Detail</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#galerie">Galerie</a>
+        <a href="#ueber">Über mich</a>
+        <a href="#shop">Etsy & Instagram</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#rechtliches">Impressum</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="pill">Handgemacht · liebevoll · individuell</span>
+          <h1>Kleine Filzkunst<br />mit großer Persönlichkeit</h1>
+          <p>
+            Willkommen bei Die FilzMarie. Hier entstehen handgefilzte Figuren, kleine
+            Kunstwerke und liebevoll gestaltete Unikate. Jedes Stück wird mit viel Geduld,
+            Gefühl und Blick fürs Detail gefertigt.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#galerie">Galerie ansehen</a>
+            <a class="btn btn-secondary" href="#shop">Zu Etsy & Instagram</a>
+          </div>
+
+          <div class="hero-notes">
+            <span class="pill">Platz für Auftragsarbeiten</span>
+            <span class="pill">Ideal für Geschenkideen</span>
+            <span class="pill">Jedes Stück ein Unikat</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <!-- HERO-BILD ERSETZEN: src="bilder/hero.jpg" -->
+            <div class="placeholder-image">
+              
+            </div>
+          </div>
+
+          
+    </section>
+
+    <section class="section" id="ueber">
+      <div class="container split-grid">
+        <div class="card about-copy">
+          <span class="pill">Die Idee hinter der FilzMarie</span>
+          <h2 class="section-title" style="margin-top: 1rem;">Mit Herz gemacht.</h2>
+          <p>
+            Ich fertige handgefilzte Figuren und Dekorationen mit viel Liebe zum Detail.
+            Jede Figur entsteht in sorgfältiger Handarbeit und bekommt ihren ganz eigenen Charakter.
+          </p>
+          <p>
+            Ob als Geschenk, kleine Erinnerung oder einfach als besonderes Einzelstück:
+            Meine Arbeiten sollen Freude machen und ein wenig Wärme in den Alltag bringen.
+          </p>
+          <p>
+            Viele Werke sind Unikate. Manche Figuren können auch nach individuellen Wünschen gestaltet werden.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="feature-list">
+            <div class="feature-item">
+              <strong>Handarbeit</strong>
+              Jedes Stück wird einzeln gefertigt und ist nicht industriell hergestellt.
+            </div>
+            <div class="feature-item">
+              <strong>Individuell</strong>
+              Auf Wunsch können Farben, Details oder Motive angepasst werden.
+            </div>
+            <div class="feature-item">
+              <strong>Liebe zum Detail</strong>
+              Kleine Elemente, stimmige Farben und eine ruhige Gestaltung stehen im Mittelpunkt.
+            </div>
+            <div class="feature-item">
+              <strong>Persönlicher Kontakt</strong>
+              Fragen und Wünsche können direkt über Instagram, Etsy oder per E-Mail gestellt werden.
+            </div>
+          </div>
+          <p class="small-note">
+            
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galerie">
+      <div class="container">
+        <span class="pill">Galerie</span>
+        <h2 class="section-title" style="margin-top: 1rem;">Einblicke in die Filzkunst</h2>
+        <p class="section-intro">
+        </p>
+
+        <div class="gallery-grid">
+          <article class="gallery-item">
+            <!-- GALERIEBILD 1 ERSETZEN: src="bilder/galerie-1.jpg" -->
+            <div class="placeholder-image">
+              <div>
+                <strong>Galeriebild 1</strong>
+                <br />
+                <code>bilder/galerie-1.jpg</code>
+              </div>
+            </div>
+            <div class="gallery-info">
+          
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <!-- GALERIEBILD 2 ERSETZEN: src="bilder/galerie-2.jpg" -->
+            <div class="placeholder-image">
+              <div>
+                <strong>Galeriebild 2</strong>
+                <br />
+                <code>bilder/galerie-2.jpg</code>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3></h3>
+              <p>.</p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <!-- GALERIEBILD 3 ERSETZEN: src="bilder/galerie-3.jpg" -->
+            <div class="placeholder-image">
+              <div>
+                <strong>Galeriebild 3</strong>
+               <br />
+                <code>bilder/galerie-3.jpg</code>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3></h3>
+              <p></p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <!-- GALERIEBILD 4 ERSETZEN: src="bilder/galerie-4.jpg" -->
+            <div class="placeholder-image">
+              <div>
+                <strong>Galeriebild 4</strong>
+                <br />
+                <code>bilder/galerie-4.jpg</code>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3></h3>
+              <p></p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <!-- GALERIEBILD 5 ERSETZEN: src="bilder/galerie-5.jpg" -->
+            <div class="placeholder-image">
+              <div>
+                <strong>Galeriebild 5</strong>
+               <br />
+                <code>bilder/galerie-5.jpg</code>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3></h3>
+              <p></p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <!-- GALERIEBILD 6 ERSETZEN: src="bilder/galerie-6.jpg" -->
+            <div class="placeholder-image">
+              <div>
+                <strong>Galeriebild 6</strong>
+                <br />
+                <code>bilder/galerie-6.jpg</code>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3></h3>
+              <p></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="container">
+        <span class="pill">Mehr entdecken</span>
+        <h2 class="section-title" style="margin-top: 1rem;">Instagram & Etsy</h2>
+        <p class="section-intro">
+        </p>
+
+        <div class="cta-grid">
+          <div class="cta-card">
+            <h3>Instagram</h3>
+            <p>
+              Für aktuelle Bilder, neue Figuren und einen persönlicheren Einblick in die Arbeit.
+            </p>
+            <a class="btn btn-secondary" href="https://www.instagram.com/diefilzmarie?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+              Zu Instagram
+            </a>
+          </div>
+
+          <div class="cta-card">
+            <h3>Etsy</h3>
+            <p>
+              Für verfügbare Werke.
+            </p>
+            <!-- ETSY-LINK SPÄTER ERSETZEN -->
+            <a class="btn btn-primary" href="https://www.etsy.com/de/shop/DieFilzMarie" target="_blank" rel="noopener noreferrer">
+              Zu Etsy
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <div class="container">
+        <span class="pill">Kontakt</span>
+        <h2 class="section-title" style="margin-top: 1rem;">Fragen oder individuelle Wünsche?</h2>
+        <p class="section-intro">
+          Hier kann deine Tante erreichbar sein, ohne dass die Seite gleich aussieht wie das Kontrollzentrum einer Versicherung.
+          Schlicht reicht völlig.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-box">
+            <h3>Kontaktmöglichkeiten</h3>
+            <ul>
+              <li><strong>E-Mail:</strong> <a href="mailto:deine-email@example.com">deine-email@example.com</a></li>
+              <li><strong>Instagram:</strong> <a href="https://www.instagram.com/diefilzmarie" target="_blank" rel="noopener noreferrer">@diefilzmarie</a></li>
+              <li><strong>Etsy:</strong> <a href="https://www.etsy.com" target="_blank" rel="noopener noreferrer">Shop-Link einsetzen</a></li>
+            </ul>
+          </div>
+
+          <div class="contact-box">
+            <h3>Hinweis</h3>
+            <p>
+              Anfragen zu Farben, Motiven oder individuellen Ideen können gern gestellt werden.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rechtliches">
+      <div class="container">
+        <span class="pill">Rechtliches</span>
+        <h2 class="section-title" style="margin-top: 1rem;">Impressum & Datenschutz</h2>
+        <p class="section-intro">
+
+        </p>
+
+        <div class="legal-grid">
+          <div class="legal-box">
+            <h3>Impressum</h3>
+            <p>
+              <strong>Name:</strong> Vorname Nachname<br />
+              <strong>Anschrift:</strong> Straße Hausnummer, PLZ Ort<br />
+              <strong>E-Mail:</strong> deine-email@example.com
+            </p>
+            <p style="margin-top: 0.8rem;">
+              
+            </p>
+          </div>
+
+          <div class="legal-box">
+            <h3>Datenschutz</h3>
+            <ul>
+              <li>Diese Website dient der Präsentation handgefertigter Arbeiten.</li>
+              <li>Beim Besuch der Website können technisch notwendige Server-Logfiles verarbeitet werden.</li>
+              <li>Beim Klick auf externe Links, z. B. Instagram oder Etsy, gelten die Datenschutzbestimmungen der jeweiligen Plattformen.</li>  
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> Die FilzMarie</p>
+      <div class="footer-links">
+        <a href="#galerie">Galerie</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#rechtliches">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
